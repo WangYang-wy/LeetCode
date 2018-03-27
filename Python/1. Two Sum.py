@@ -18,7 +18,17 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                print(i)
+                print(j)
+                if (nums[i] + nums[j] == target):
+                    result = (i, j)
+
+        return list(result)
 
 
 if __name__ == "__main__":
-    print(1)
+    solution = Solution()
+    print(solution.twoSum([3, 2, 4], 6))
+    print(solution.twoSum([3, 3], 6))
