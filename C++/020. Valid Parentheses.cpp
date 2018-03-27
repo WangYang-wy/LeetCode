@@ -16,7 +16,7 @@ class Solution {
 public:
     bool isValid(string s) {
         int length = int(s.length());
-        printf("length = %d\n", length);
+//        printf("length = %d\n", length);
         vector<char> stack;
         for (int i = 0; i < length; i++) {
             if (s[i] == '(') {
