@@ -34,6 +34,7 @@ public:
         }
 
         int diffDepth = getDepth(root->left) - getDepth(root->right);
+        // 判断高度差在[-1, 1]内，而且，两个子树都是平衡的。
         return diffDepth >= -1 && diffDepth <= 1 && isBalanced(root->left) && isBalanced(root->right);
     }
 

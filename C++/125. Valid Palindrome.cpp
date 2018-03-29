@@ -46,6 +46,7 @@ public:
             return true;
         int begin = 0;
         int end = int(s.size() - 1);
+        // 左右两边开始循环，快速排序的思想，两个哨兵。
         while (true) {
             while (begin < s.size() && !isAlphanumeric(s[begin])) {
                 begin++;
