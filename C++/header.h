@@ -56,7 +56,7 @@ void tree_dfs(TreeNode *root, int layer = 0) {
         return;
     }
 
-    printf("第 %d 层。当前结点的值：%d 。\n", layer + 1, root->val);
+    printf("第 %d 层，当前结点的值：%d 。\n", layer + 1, root->val);
     tree_dfs(root->left, layer + 1);
     tree_dfs(root->right, layer + 1);
 }
