@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <vector>
 #include <string>
+#include <queue>
 
 using namespace std;
 
@@ -64,10 +65,28 @@ void tree_dfs(TreeNode *root, int layer = 0) {
 /**
  * 遍历一个二叉树，广度优先遍历。
  * @param root 根节点。
- * @param layer 层次，默认值为0，即从根节点开始。
  */
-void tree_bfs(TreeNode *root, int layer = 0) {
+void tree_bfs(TreeNode *root) {
+    if (NULL == root) {
+        return;
+    }
 
+    queue<TreeNode *> *my_queue = new queue<TreeNode *>();
+
+    my_queue->push(root);
+
+    while (!my_queue->empty()) {
+        TreeNode *tmp = my_queue->front();
+        my_queue->pop();
+        printf("当前结点的值为：%d\n。", tmp->val);
+        if (NULL != tmp->left) {
+            my_queue->push(tmp->left);
+        }
+
+        if (NULL != tmp->right) {
+            my_queue->push(tmp->right);
+        }
+    }
 }
 
 /**
