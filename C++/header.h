@@ -6,9 +6,14 @@
 #define LEETCODE_HEADER_H
 
 #include <iostream>
+#include <algorithm>
+#include <vector>
+#include <string>
+
+using namespace std;
 
 /**
- * 链表节点。
+ * 链表节点定义。
  */
 struct ListNode {
     int val;
@@ -18,7 +23,20 @@ struct ListNode {
 };
 
 /**
- * 树的节点。
+ * 打印一个链表的所有元素。
+ * @param p 链表。
+ */
+void print_list(ListNode *p) {
+    int i = 1;
+    while (p != NULL) {
+        printf("第 %d 个结点的取值 val = %d\n", i, p->val);
+        p = p->next;
+        i++;
+    }
+}
+
+/**
+ * 树的节点定义。
  */
 struct TreeNode {
     int val;
@@ -29,14 +47,35 @@ struct TreeNode {
 };
 
 /**
- * 打印一个链表的所有元素。
- * @param p 链表。
+ * 遍历一个二叉树，深度优先遍历。
+ * @param root 根节点。
+ * @param layer 层次，默认值为0，即从根节点开始。
  */
-void print_list(ListNode *p) {
-    while (p != NULL) {
-        printf("val = %d\n", p->val);
-        p = p->next;
+void tree_dfs(TreeNode *root, int layer = 0) {
+    if (NULL == root) {
+        return;
     }
+
+    printf("第 %d 层。当前结点的值：%d 。\n", layer + 1, root->val);
+    tree_dfs(root->left, layer + 1);
+    tree_dfs(root->right, layer + 1);
+}
+
+/**
+ * 遍历一个二叉树，广度优先遍历。
+ * @param root 根节点。
+ * @param layer 层次，默认值为0，即从根节点开始。
+ */
+void tree_bfs(TreeNode *root, int layer = 0) {
+
+}
+
+/**
+ * 遍历一个二叉树。
+ * @param root
+ */
+void print_tree(TreeNode *root) {
+    tree_dfs(root, 0);
 }
 
 #endif //LEETCODE_HEADER_H
