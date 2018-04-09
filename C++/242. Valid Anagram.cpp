@@ -23,15 +23,41 @@
  * 主要问题在于，可以使用STL的字符串：字符数据进行排序，然而我选择自己实现排序算法，导致TLE。
  */
 
+/**
+ *
+ */
+
 class Solution {
 public:
-    bool isAnagram(string s, string t) {
+    // 使用排序的方式。
+    bool isAnagram_sort(string s, string t) {
         int s_length = int(s.length());
         int t_length = int(t.length());
         if (s_length == t_length) {
             sort(s.begin(), s.end());
             sort(t.begin(), t.end());
             return s == t;
+        } else {
+            return false;
+        }
+    }
+
+    // 另一种方式，统计字母表的频数，如果s中有，那么字典的value+1，t中有，那么字典的value-1。
+    bool isAnagram(string s, string t) {
+        int s_length = int(s.size());
+        int t_length = int(t.size());
+        if (s_length == t_length) {
+            int dict[26] = {0};
+            for (int i = 0; i < s_length; i++) {
+                dict[s[i] - 'a']++; // 一个来加，一个来减。
+                dict[t[i] - 'a']--;
+            }
+            for (int i = 0; i < 26; i++) {
+                if (0 != dict[i]) {
+                    return false;
+                }
+            }
+            return true;
         } else {
             return false;
         }
