@@ -35,6 +35,6 @@ public:
 int main() {
     Solution *solution = new Solution();
     string s("hello");
-    printf("%s\n", solution->reverseString(s));
+    printf("%s\n", solution->reverseString(s).c_str());
     return 0;
 }
