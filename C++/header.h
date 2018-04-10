@@ -11,6 +11,7 @@
 #include <string>
 #include <queue>
 #include <map>
+#include <math.h>
 
 using namespace std;
 
@@ -91,11 +92,29 @@ void tree_bfs(TreeNode *root) {
 }
 
 /**
- * 遍历一个二叉树。
- * @param root
+ * bfs遍历一个二叉树，并且要保存层级。
+ * @param root 二叉树的根结点。
  */
-void print_tree(TreeNode *root) {
-    tree_dfs(root, 0);
+void bfs_layer(TreeNode *root) {
+    vector<vector<int>> res;
+    if (NULL == root) {
+        return;
+    }
+    queue<pair<TreeNode *, int>> q;
+    q.push(make_pair(root, 0));
+    while (!q.empty()) {
+        pair<TreeNode *, int> tmp = q.front();
+        q.pop();
+        printf("当前结点的值：%d, 当前结点的层级：%d。\n", tmp.first->val, tmp.second);
+
+        if (NULL != tmp.first->left) {
+            q.push(make_pair(tmp.first->left, tmp.second + 1));
+        }
+
+        if (NULL != tmp.first->right) {
+            q.push(make_pair(tmp.first->right, tmp.second + 1));
+        }
+    }
 }
 
 #endif //LEETCODE_HEADER_H
