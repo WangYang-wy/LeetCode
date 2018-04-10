@@ -12,6 +12,7 @@
 #include <queue>
 #include <map>
 #include <math.h>
+#include <stack>
 
 using namespace std;
 
@@ -95,7 +96,7 @@ void tree_bfs(TreeNode *root) {
  * bfs遍历一个二叉树，并且要保存层级。
  * @param root 二叉树的根结点。
  */
-void bfs_layer(TreeNode *root) {
+void tree_bfs_layer(TreeNode *root) {
     vector<vector<int>> res;
     if (NULL == root) {
         return;
