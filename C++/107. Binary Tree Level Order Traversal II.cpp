@@ -20,7 +20,8 @@
  */
 class Solution {
 public:
-    vector<vector<int>> levelOrderBottom(TreeNode *root) {
+    // 自己写的。
+    vector<vector<int>> levelOrderBottom_my(TreeNode *root) {
         vector<vector<int>> res;
         int max_layer = 0;
         if (NULL == root) {
@@ -76,6 +77,41 @@ public:
         for (auto item : res) {
             for (auto x:item) {
                 printf("x = %d\n", x);
+            }
+        }
+        return res;
+    }
+
+    // 算法改进，在bfs的时候，当前队列里的元素个数，就是当前层的元素个数。
+    vector<vector<int>> levelOrderBottom(TreeNode *root) {
+        vector<vector<int>> res;
+        if (NULL == root) {
+            return res;
+        }
+
+        queue<TreeNode *> q;
+        q.push(root);
+        while (!q.empty()) {
+            vector<int> layer;
+            int size = int(q.size());
+            for (int i = 0; i < size; i++) {
+                TreeNode *tmp = q.front();
+                q.pop();
+                layer.push_back(tmp->val);
+                if (tmp->left) {
+                    q.push(tmp->left);
+                }
+
+                if (tmp->right) {
+                    q.push(tmp->right);
+                }
+            }
+            res.push_back(layer);
+        }
+        reverse(res.begin(), res.end());
+        for (auto item : res) {
+            for (auto x : item) {
+                printf("%d\n", x);
             }
         }
         return res;
