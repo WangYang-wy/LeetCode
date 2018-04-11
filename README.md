@@ -8,8 +8,10 @@
 
 - C/C++
 - Python3
+- MySQL
 
 ## 编译器
 
 - PyCharm
 - CLion
+- DataGrip
