@@ -40,6 +40,20 @@ void print_list(ListNode *p) {
 }
 
 /**
+ * 获取链表的长度。
+ * @param p 链表。
+ * @return 长度。
+ */
+int getLength(ListNode *p) {
+    int i = 0;
+    while (p) {
+        i++;
+        p = p->next;
+    }
+    return i;
+}
+
+/**
  * 树的节点定义。
  */
 struct TreeNode {
