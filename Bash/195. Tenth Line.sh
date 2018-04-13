@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # How would you print just the 10th line of a file?
 
 # For example, assume that file.txt has the following content:
