@@ -54,6 +54,25 @@ int getLength(ListNode *p) {
 }
 
 /**
+ * 获取链表的第i + 1个结点的取值，如果越界，那么返回INT_MAX。
+ * @param head 链表。
+ * @param i 索引。
+ * @return 取值。
+ */
+int getIndex(ListNode *head, int i) {
+    if (i + 1 < getLength(head)) {
+        return INT_MIN; // 无。
+    }
+    int res = 0;
+    while (res < i) {
+        head = head->next;
+        res++;
+    }
+    std::cout << "第" << i + 1 << "个结点的取值为：" + head->val << "." << std::endl;
+    return head->val;
+}
+
+/**
  * 树的节点定义。
  */
 struct TreeNode {
