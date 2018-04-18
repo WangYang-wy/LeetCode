@@ -68,7 +68,7 @@ int getIndex(ListNode *head, int i) {
         head = head->next;
         res++;
     }
-    std::cout << "第" << i + 1 << "个结点的取值为：" + head->val << "." << std::endl;
+    std::cout << "第" << i + 1 << "个结点的取值为：" << head->val << "." << std::endl;
     return head->val;
 }
 
