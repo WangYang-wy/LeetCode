@@ -17,6 +17,30 @@
 using namespace std;
 
 /**
+ * 从最高位到最低位打印一个32位整数的各个bit位。
+ * @param num 数字。
+ */
+void printByBit(int num) {
+    std::cout << "从最高位到最低位打印一个32位整数的各个bit位：" << std::endl;
+    for (int i = 0; i < 32; i++) {
+        std::cout << "第" << i + 1 << "位的值为：" << ((num & (1 << (31 - i))) >> (31 - i)) << "." << std::endl;
+    }
+}
+
+/**
+ * 从最高位到最低位打印一个32位整数的各个bit位，循环次数为ceil(log2(num))。
+ * @param num 数字。
+ */
+void printByBitAppropriate(int num) {
+    int n = ceil(log2(num));
+    std::cout << "从最高位到最低位打印一个32位整数的各个bit位：" << std::endl;
+    for (int i = 0; i < n; i++) {
+        int bit = ((num & (1 << (n - i - 1))) >> (n - i - 1));
+        std::cout << "第" << i + 1 << "位的值为：" << bit << "." << std::endl;
+    }
+}
+
+/**
  * 链表节点定义。
  */
 struct ListNode {
