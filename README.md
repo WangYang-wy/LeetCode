@@ -15,3 +15,7 @@
 - PyCharm
 - CLion
 - DataGrip
+
+## 历程
+
+- 2018-04-18: `AC100`. A First Step Toward Algorithm, Thinking Time, Space and Tradeoff.
