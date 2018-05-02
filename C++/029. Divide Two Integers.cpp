@@ -14,7 +14,7 @@ public:
             return INT_MAX;
         }
         if ((dividend > 0 && divisor > 0) || (dividend < 0 && divisor < 0)) {
-            flag = 1; // 是否同号。
+            flag = 1; // 是否同号，如果是异号，那么结果为负数。
         }
         a = abs((long long) dividend);
         b = abs((long long) divisor);
