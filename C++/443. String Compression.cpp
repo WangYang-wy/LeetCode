@@ -29,10 +29,10 @@ public:
 
                 if (k > 1) {
                     string s = to_string(k); // 插入连续的频数。
-                    for (int j = 0; j < s.size(); j++) {
+                    for (int j = 0; j < s.size(); j++, pre++) {
                         chars[pre + 1] = s[j];
-                        pre++;
                     }
+                    pre++;
                 } else { // 如果k=1，则不写频数。
                     pre++;
                 }
@@ -41,16 +41,18 @@ public:
             }
         }
 
+        chars[pre] = temp;
+
         // 对于最后一个的处理。
         if (k > 1) {
             string s = to_string(k);
             for (int i = 0; i < s.size(); i++, pre++) {
-                chars[pre + 1] = s[j];
+                chars[pre + 1] = s[i];
             }
         }
 
         // 对于多余的。
-        for (int i = pre + 1; i < size; i++) {
+        for (int i = pre + 1; i < n; i++) {
             chars.pop_back();
         }
 
