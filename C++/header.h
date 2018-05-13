@@ -24,7 +24,8 @@ using namespace std;
 void printByBit(int num) {
     std::cout << "从最高位到最低位打印一个32位整数的各个bit位：" << std::endl;
     for (int i = 0; i < 32; i++) {
-        std::cout << "第" << i + 1 << "位的值为：" << ((num & (1 << (31 - i))) >> (31 - i)) << "." << std::endl;
+        std::cout << "第" << i + 1 << "位的值为：" << ((num & (1 << (31 - i))) >> (31 - i))
+                  << "." << std::endl;
     }
 }
 
