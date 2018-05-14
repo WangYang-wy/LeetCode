@@ -18,7 +18,7 @@
 
 class Solution {
 public:
-    vector<int> twoSum(vector<int> &numbers, int target) {
+    vector<int> twoSum_slow(vector<int> &numbers, int target) {
         vector<int> res;
         for (int i = 0; i < numbers.size() - 1; i++) {
             for (int j = i + 1; j < numbers.size(); j++) {
@@ -31,6 +31,26 @@ public:
                 if (numbers[j] > target - numbers[i]) {
                     break;
                 }
+            }
+        }
+        return res;
+    }
+
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        vector<int> res;
+        int n = int(numbers.size());
+        int i = 0;
+        int j = n - 1;
+        while (i < j) {
+            int sum = numbers[i] + numbers[j];
+            if (target == sum) {
+                res.push_back(i + 1);
+                res.push_back(j + 1);
+                return res;
+            } else if (sum < target) {
+                i++;
+            } else {
+                j--;
             }
         }
         return res;
