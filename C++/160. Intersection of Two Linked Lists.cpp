@@ -58,6 +58,23 @@ public:
         }
         return i;
     }
+
+    /**
+     * 使用集合的方法。
+     * @param head
+     * @return
+     */
+    ListNode *detectCycle_set(ListNode *head) {
+        std::set<ListNode *> node_set;
+        while (head) {
+            if (node_set.find(head) != node_set.end()) { // 如果发现存在，那么直接返回该结点。
+                return head;
+            }
+            node_set.insert(head);
+            head = head->next;
+        }
+        return NULL;
+    }
 };
 
 int main() {
