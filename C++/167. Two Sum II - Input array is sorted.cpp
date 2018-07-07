@@ -36,7 +36,7 @@ public:
         return res;
     }
 
-    vector<int> twoSum(vector<int>& numbers, int target) {
+    vector<int> twoSum(vector<int> &numbers, int target) {
         vector<int> res;
         int n = int(numbers.size());
         int i = 0;

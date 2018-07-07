@@ -12,31 +12,64 @@
 /**
  * 参考博客：https://www.cnblogs.com/mengfanrong/p/5282042.html
  */
-#include <iostream>
-#include <vector>
-#include <limits>
-#include <math.h>
-#include <algorithm>
-
-using namespace std;
+#include "header.h"
 
 class Solution {
 public:
-    int maxSubArray(vector<int> &nums) {
-        int max = INT_MIN;//设置最小值
-        int sum = 0;//每一个分组的和
-        int i = 0;
-        while (i < nums.size()) {
-            sum += nums[i];//每一个分组的前n项和
-            if (max < sum) {
-                max = sum;//取最大和
+    // 程序的时间复杂度不对。O(n^3)，附加空间复杂度O(1)。
+    int maxSubArray_TLE(vector<int> &nums) {
+        int n = nums.size();
+        int ans = -2147483648;  // INT 最小的数据。
+        for (int st = 0; st < n; ++st) {
+            for (int ed = st + 1; ed <= n; ++ed) {
+                int sum = 0;
+                for (int i = st; i < ed; ++i) {
+                    sum += nums[i];  // 优化先找最内层的循环，执行次数最多，累计求和，是优化的方向。
+                }
+                if (sum > ans) {
+                    ans = sum;
+                }
             }
-            if (sum < 0) {//假设<0。分组结束，開始下一组
-                sum = 0;
-            }
-            i++;
         }
-        return max;
+        return ans;
+    }
+
+    // 去掉了 sum 的冗余，每一个数字会被加入到 sum
+    int maxSubArray_TLE_opt(vector<int> &nums) {
+        int n = nums.size();
+        int ans = -2147483648;  // INT 最小的数据。
+        for (int st = 0; st < n; ++st) {
+            int sum = 0;
+            for (int ed = st + 1; ed <= n; ++ed) {
+                sum += nums[ed - 1];
+                if (sum > ans) {
+                    ans = sum;
+                }
+            }
+        }
+        return ans;
+    }
+
+    // 求和变成求差，求最大变成最小。
+    int maxSubArray(vector<int> &nums) {
+        int ans = INT_MIN;  //设置最小值
+        int n = nums.size();
+        int sj = 0;
+        int minSi = 0;
+        int si = 0;
+        int sum = si - minSi;
+        for (int j = 0; j < n; ++j) {
+            sj += nums[j];
+            if (si < minSi) {
+                minSi = si;
+            }
+
+            if (sj - minSi > ans) {
+                ans = sj - minSi;
+            }
+            si += nums[j];
+        }
+        return ans;
     }
 };
 

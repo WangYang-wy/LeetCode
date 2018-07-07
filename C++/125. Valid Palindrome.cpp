@@ -18,10 +18,7 @@
  * 参考博客：https://blog.csdn.net/booirror/article/details/43197845
  */
 
-#include <iostream>
-#include <string.h>
-
-using namespace std;
+#include "header.h"
 
 class Solution {
 public:

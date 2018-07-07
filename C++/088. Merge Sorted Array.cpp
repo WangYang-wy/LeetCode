@@ -10,10 +10,7 @@
  * The number of elements initialized in nums1 and nums2 are m and n respectively.
  */
 
-#include <iostream>
-#include <vector>
-
-using namespace std;
+#include "header.h"
 
 class Solution {
 public:

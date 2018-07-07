@@ -11,11 +11,7 @@
  * Special thanks to @yukuairoy for adding this problem and creating all test cases.
  */
 
-#include <iostream>
-#include <vector>
-#include <math.h>
-
-using namespace std;
+#include "header.h"
 
 class Solution {
 public:

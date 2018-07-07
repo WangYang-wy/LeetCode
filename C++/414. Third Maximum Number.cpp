@@ -2,10 +2,7 @@
 // Created by 王阳 on 2018/3/30.
 //
 
-#include <iostream>
-#include <vector>
-
-using namespace std;
+#include "header.h"
 
 class Solution {
 public:

@@ -12,10 +12,10 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
- /**
-  * 参考博客：https://blog.csdn.net/sunao2002002/article/details/45727149
-  * 解法：如果结点相同，即地址相同，指向同一个结点，即后续结点也相同。
-  */
+/**
+ * 参考博客：https://blog.csdn.net/sunao2002002/article/details/45727149
+ * 解法：如果结点相同，即地址相同，指向同一个结点，即后续结点也相同。
+ */
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {

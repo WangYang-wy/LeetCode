@@ -18,7 +18,7 @@ public:
                 num = num / 7;
             }
             return '-' + res;
-        } else if (num > 0){
+        } else if (num > 0) {
             while (num != 0) {
                 res = to_string(num % 7) + res;
                 num = num / 7;

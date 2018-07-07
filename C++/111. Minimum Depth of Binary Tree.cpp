@@ -8,11 +8,7 @@
  * the root node down to the nearest leaf node.
  */
 
-#include <iostream>
-#include <vector>
-#include <queue>
-
-using namespace std;
+#include "header.h"
 
 // Definition for a binary tree node.
 struct TreeNode {

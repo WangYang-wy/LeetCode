@@ -8,10 +8,7 @@
  * You may assume no duplicates in the array.
  */
 
-#include <iostream>
-#include <vector>
-
-using namespace std;
+#include "header.h"
 
 class Solution {
 public:

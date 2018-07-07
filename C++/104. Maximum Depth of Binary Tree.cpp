@@ -13,10 +13,8 @@
 /**
  * Definition for a binary tree node.
  */
-#include <iostream>
-#include <vector>
 
-using namespace std;
+#include "header.h"
 
 struct TreeNode {
     int val;

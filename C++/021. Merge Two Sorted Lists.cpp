@@ -2,18 +2,7 @@
 // Created by 王阳 on 2018/3/30.
 //
 
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-//Definition for singly-linked list.
-struct ListNode {
-    int val;
-    ListNode *next;
-
-    ListNode(int x) : val(x), next(NULL) {}
-};
+#include "header.h"
 
 class Solution {
 public:

@@ -33,9 +33,6 @@ public:
                 j--;
             }
 
-//            for (int x : nums) {
-//                printf("x = %d.\n", x);
-//            }
         }
         return int(nums.size());
     }
@@ -52,16 +49,9 @@ int main() {
     a.push_back(10);
     a.push_back(100);
 
-//    for (int x : a) {
-//        printf("x = %d\n", x);
-//    }
-
     printf("size = %d\n", int(a.size()));
     printf("answer = %d\n", solution->removeDuplicates(a));
     printf("---\n");
     printf("size = %d\n", int(a.size()));
-//    for (int x : a) {
-//        printf("x = %d\n", x);
-//    }
     return 0;
 }

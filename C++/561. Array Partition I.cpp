@@ -20,7 +20,8 @@ public:
             sum += (nums[i] < nums[i + 1] ? nums[i] : nums[i + 1]);
         }
         return sum;
-    }};
+    }
+};
 
 int main() {
     Solution *solution = new Solution();

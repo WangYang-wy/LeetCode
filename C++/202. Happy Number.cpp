@@ -20,12 +20,7 @@
  * 那么一定是在相加的过程中出现了数的循环，1不含在循环中。
  * 参考博客：https://www.cnblogs.com/VickyWang/p/6025253.html
  */
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <map>
-
-using namespace std;
+#include "header.h"
 
 class Solution {
 public:

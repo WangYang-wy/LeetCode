@@ -6,11 +6,7 @@
  * Write a function to find the longest common prefix string amongst an array of strings.
  */
 
-#include <iostream>
-#include <vector>
-#include <string>
-
-using namespace std;
+#include "header.h"
 
 class Solution {
 public:

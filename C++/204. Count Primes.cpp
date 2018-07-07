@@ -12,8 +12,7 @@
 /**
  * 质数定义为在大于1的自然数中，除了1和它本身以外不再有其他因数。
  */
-#include <math.h>
-#include <iostream>
+#include "header.h"
 
 class Solution {
 public:

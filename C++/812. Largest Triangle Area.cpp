@@ -6,7 +6,7 @@
 
 class Solution {
 public:
-    double largestTriangleArea(vector <vector<int>> &points) {
+    double largestTriangleArea(vector<vector<int>> &points) {
         int n = int(points.size());
         double max_area = 0;
         for (int i = 0; i < n; i++) {

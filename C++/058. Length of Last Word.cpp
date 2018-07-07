@@ -12,12 +12,7 @@
  * Output: 5
  */
 
-#include <iostream>
-#include <vector>
-#include <limits>
-#include <math.h>
-
-using namespace std;
+#include "header.h"
 
 class Solution {
 public:
