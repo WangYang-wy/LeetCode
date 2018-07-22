@@ -10,7 +10,7 @@
 
 class Solution {
 public:
-    string longestCommonPrefix(vector<string> &strs) {
+    string longestCommonPrefix(vector <string> &strs) {
         if (strs.size() == 0) {
             return ""; // 如果没有字符串。
         }
@@ -37,7 +37,7 @@ public:
      * @param strs 字符串数组。
      * @return 最长公共子序列。
      */
-    string longestCommonPrefix_ERROR(vector<string> &strs) {
+    string longestCommonPrefix_ERROR(vector <string> &strs) {
         printf("length = %d\n", strs.size());
         if (0 == strs.size()) {
             return "";
@@ -72,7 +72,7 @@ public:
 
 int main() {
     Solution *solution = new Solution();
-    vector<string> *a = new vector<string>();
+    vector <string> *a = new vector<string>();
     string s1 = "abab";
     string s2 = "aba";
     string s3 = "";
