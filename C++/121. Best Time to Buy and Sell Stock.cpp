@@ -13,6 +13,7 @@
  */
 class Solution {
 public:
+    // 平方的时间。
     int maxProfit(vector<int> &prices) {
         int n = int(prices.size());
         int max_count = 0; // 如果小于等于0，那么就不买卖。
@@ -25,6 +26,22 @@ public:
             }
         }
         return max_count;
+    }
+
+    // 优化。记录一下最低价，然后在同一时间寻找较高价位。
+    int maxProfit_better(vector<int> &prices) {
+        int n = int(prices.size());
+        int max = 0; // 如果小于等于0，那么就不买卖。
+        int min = INT_MAX;
+        for (int i = 0; i < n - 1; i++) {
+            if (prices[i] < min) {
+                min = prices[i];
+            }
+            if (prices[i] - min > max) {
+                max = prices[i] - min;
+            }
+        }
+        return max;
     }
 };
 
