@@ -5,10 +5,9 @@
 #include "header.h"
 
 class MinStack {
-public:
-    /** initialize your data structure here. */
+private:
     vector<int> *a;
-
+public:
     MinStack() {
         a = new vector<int>();
     }
