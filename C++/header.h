@@ -12,7 +12,7 @@
 #include <queue>
 #include <stack>
 #include <map>
-#include <math.h>
+#include <cmath>
 #include <stack>
 #include <unordered_map>
 #include <set>
@@ -36,7 +36,7 @@ void printByBit(int num) {
  * @param num 数字。
  */
 void printByBitAppropriate(int num) {
-    int n = ceil(log2(num));
+    int n = int(ceil(log2(num)));
     std::cout << "从最高位到最低位打印一个32位整数的各个bit位：" << std::endl;
     for (int i = 0; i < n; i++) {
         int bit = ((num & (1 << (n - i - 1))) >> (n - i - 1));
@@ -51,7 +51,7 @@ struct ListNode {
     int val;
     ListNode *next;
 
-    ListNode(int x) : val(x), next(NULL) {}
+    ListNode(int x) : val(x), next(nullptr) {}
 };
 
 /**
@@ -60,7 +60,7 @@ struct ListNode {
  */
 void print_list(ListNode *p) {
     int i = 1;
-    while (p != NULL) {
+    while (p != nullptr) {
         printf("第 %d 个结点的取值 val = %d\n", i, p->val);
         p = p->next;
         i++;
@@ -108,7 +108,7 @@ struct TreeNode {
     TreeNode *left;
     TreeNode *right;
 
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
 /**
@@ -117,7 +117,7 @@ struct TreeNode {
  * @param layer 层次，默认值为0，即从根节点开始。
  */
 void tree_dfs(TreeNode *root, int layer = 0) {
-    if (NULL == root) {
+    if (nullptr == root) {
         return;
     }
 
@@ -131,7 +131,7 @@ void tree_dfs(TreeNode *root, int layer = 0) {
  * @param root 根节点。
  */
 void tree_bfs(TreeNode *root) {
-    if (NULL == root) {
+    if (nullptr == root) {
         return;
     }
 
@@ -143,11 +143,11 @@ void tree_bfs(TreeNode *root) {
         TreeNode *tmp = my_queue->front();
         my_queue->pop();
         printf("当前结点的值为：%d\n。", tmp->val);
-        if (NULL != tmp->left) {
+        if (nullptr != tmp->left) {
             my_queue->push(tmp->left);
         }
 
-        if (NULL != tmp->right) {
+        if (nullptr != tmp->right) {
             my_queue->push(tmp->right);
         }
     }
@@ -159,7 +159,7 @@ void tree_bfs(TreeNode *root) {
  */
 void tree_bfs_layer(TreeNode *root) {
     vector<vector<int>> res;
-    if (NULL == root) {
+    if (nullptr == root) {
         return;
     }
     queue<pair<TreeNode *, int>> q;
@@ -169,11 +169,11 @@ void tree_bfs_layer(TreeNode *root) {
         q.pop();
         printf("当前结点的值：%d, 当前结点的层级：%d。\n", tmp.first->val, tmp.second);
 
-        if (NULL != tmp.first->left) {
+        if (nullptr != tmp.first->left) {
             q.push(make_pair(tmp.first->left, tmp.second + 1));
         }
 
-        if (NULL != tmp.first->right) {
+        if (nullptr != tmp.first->right) {
             q.push(make_pair(tmp.first->right, tmp.second + 1));
         }
     }
