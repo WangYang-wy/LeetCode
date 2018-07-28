@@ -18,4 +18,5 @@
 
 ## 历程
 
-- 2018-04-18: `AC100`. A First Step Toward Algorithm, Thinking Time, Space and Tradeoff.
+- 2018-04-18: `AC100`. A First Step Toward Algorithm, Thinking Time, Space and Trade-off.
+- 2018-07-28: `AC200`. DP/DFS/BFS.
