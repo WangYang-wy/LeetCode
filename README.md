@@ -4,6 +4,11 @@
 
 [wangyang-wy](https://leetcode.com/wangyang-wy/)
 
+## 历程
+
+- 2018-04-18: `AC100`. A First Step Toward Algorithm, Thinking Time, Space and Trade-off.
+- 2018-07-28: `AC200`. DP/DFS/BFS.
+
 ## 编程语言
 
 - C/C++
@@ -15,8 +20,3 @@
 - PyCharm
 - CLion
 - DataGrip
-
-## 历程
-
-- 2018-04-18: `AC100`. A First Step Toward Algorithm, Thinking Time, Space and Trade-off.
-- 2018-07-28: `AC200`. DP/DFS/BFS.
