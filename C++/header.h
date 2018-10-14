@@ -16,6 +16,7 @@
 #include <stack>
 #include <unordered_map>
 #include <set>
+#include <numeric>
 
 using namespace std;
 
